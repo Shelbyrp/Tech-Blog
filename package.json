@@ -20,12 +20,17 @@
   },
   "homepage": "https://github.com/Shelbyrp/Tech-Blog#readme",
   "devDependencies": {
-    "nodemon": "^2.0.7"
+    "babel-eslint": "^10.1.0",
+    "nodemon": "^2.0.7",
+    "prettier": "^2.3.0"
   },
   "dependencies": {
+    "bcrypt": "^5.0.0",
+    "connect-session-sequelize": "^6.1.1",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "express-handlebars": "^5.2.0",
+    "express-session": "^1.17.1",
     "handlebars": "^4.7.6",
     "mysql2": "^2.2.5",
     "sequelize": "^6.6.2"
