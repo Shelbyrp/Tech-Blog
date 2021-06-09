@@ -56,10 +56,8 @@ router.post('/', async (req, res) => {
       username: req.body.username,
       email: req.body.email,
       password: req.body.password,
-      twitter: req.body.twitter,
-      github: req.body.github
     });
-    res.status(200).json({message: "You have signed up."})
+    res.status(200).json({ message: "You have signed up." })
   } catch (error) {
     console.log(error);
     res.status(500).json(error);
@@ -67,13 +65,13 @@ router.post('/', async (req, res) => {
 });
 
 // LOGIN
-router.post('/login', (req, res) => {
-  console.log("Login has been triggered")
-  User.findOne({
-    where: {
-      email: req.body.email
-    }
-  }).then(userData => {
+router.post('/login', async (req, res) => {
+  try {
+    const userData = await User.findOne({
+      where: {
+        email: req.body.email
+      }
+    })
     if (!userData) {
       res.status(400).json({ message: 'There is no user with that email address.' });
       return;
@@ -86,22 +84,28 @@ router.post('/login', (req, res) => {
     req.session.save(() => {
       req.session.user_id = userData.id;
       req.session.username = userData.username;
-      req.session.twitter = userData.twitter;
-      req.session.github = userData.github;
       req.session.loggedIn = true;
       res.json({ user: userData, message: 'Success! You are now logged in.' });
-    });
-  });
+    })
+  } catch (error) {
+    console.log(error);
+    res.status(500).json(error);
+  }
 });
 
-router.post('/logout', (req, res) => {
-  if (req.session.loggedIn) {
-    req.session.destroy(() => {
-      res.status(204).end();
-    });
-  }
-  else {
-    res.status(404).end();
+router.post('/logout', async (req, res) => {
+  try {
+    if (await req.session.loggedIn) {
+      req.session.destroy(() => {
+        res.status(204).end();
+      });
+    }
+    else {
+      res.status(404).end();
+    }
+  } catch (error) {
+    console.log(error);
+    res.status(500).json(error);
   }
 });
 
@@ -127,7 +131,7 @@ router.put('/:id', withAuth, async (req, res) => {
 // DELETE /api/users/1
 router.delete('/:id', withAuth, async (req, res) => {
   try {
-    const userData = await  User.destroy({
+    const userData = await User.destroy({
       where: {
         id: req.params.id
       }

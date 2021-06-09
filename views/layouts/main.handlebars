@@ -4,24 +4,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Technically Speaking</title>
+  <title>Techie Talk</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
-  <link rel="stylesheet" href="/public/css/style.css">
+  <link rel="stylesheet" href="/css/style.css">
   <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
 </head>
 
 <div class="wrapper">
   <header>
-    <h1 class="has-text-black px-3 py-3 has-text-weight-bold">Techie Talk: a tech blog</h1>
+    <h1 class="has-text-white px-3 py-3 has-text-weight-bold">Techie Talk</h1>
     <nav class="navbar mt-2">
       {{#if loggedIn}}
-      <a href="/" class="navbar-item is-hoverable pt-1">Homepage</a>
-      <a href="/dashboard" class="navbar-item is-hoverable pt-1">Dashboard</a>
-      <a href="/dashboard/create/" class="navbar-item is-hoverable pt-1 mr-4">Post</a>
+      <a href="/" class="navbar-item has-text-white is-hoverable pt-1">Homepage</a>
+      <a href="/dashboard" class="navbar-item has-text-white is-hoverable pt-1">Dashboard</a>
+      <a href="/dashboard/create/" class="navbar-item has-text-white is-hoverable pt-1 mr-4">Post</a>
       <button id="logout" class="button is-danger">Logout</button>
       {{else}}
       <a href="/" class="navbar-item is-hoverable pt-1">Homepage</a>
-      <a href="/login" class="button is-primary">Login</a>
+      <a href="/login" class="button is-info">Login</a>
       {{/if}}
     </nav>
   </header>
@@ -31,19 +31,19 @@
   </main>
 
   <footer class="footer rows pb-2">
-    <div class="row-is-full content has-text-centered">
+    <div class="row-is-full content has-text-centered has-text-white">
       <p>
-        <a href="/">Homepage</a>{{#if loggedIn}} |
-        <a href="/dashboard/">Dashboard</a> |
-        <a href="/dashboard/create/">Post</a>
+        <a href="/" class="has-text-white">Homepage</a>{{#if loggedIn}} |
+        <a href="/dashboard/" class="has-text-white">Dashboard</a> |
+        <a href="/dashboard/create/" class="has-text-white">Post</a>
         {{else}}
-        | <a href="/login/">Login</a>
+        | <a href="/login/" class="has-text-white">Login</a>
         {{/if}}
       </p>
     </div>
-    <div class="row-is-full content has-text-centered">
+    <div class="row-is-full content has-text-centered has-text-white">
       <p>
-        <strong>Techie Talk</strong> by Shelby Pignat</a>
+       Techie Talk by Shelby Pignat</a>
       </p>
     </div>
   </footer>
