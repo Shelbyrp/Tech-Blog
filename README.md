@@ -46,14 +46,18 @@ http://expressjs.com/en/api.html
 
 https://www.npmjs.com/package/nodemon
 
+https://handlebarsjs.com/guide/builtin-helpers.html
+
+https://www.npmjs.com/package/express-session
+
+https://www.npmjs.com/package/bcrypt
+
+https://www.npmjs.com/package/dotenv
+
+https://www.npmjs.com/package/connect-session-sequelize
+
 ## Tests 
-To ensure that this application is running correctly, run the following command in your bash terminal:
-
-```
-
-npm test
-
-```
+There are currently no tests for this application.
 
 ## Questions
 If you have any questions or require further clarification then please contact me at:

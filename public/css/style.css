@@ -3,7 +3,7 @@
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
-header {
+#page-header {
   background-color: #05346d;
 }
 
@@ -76,7 +76,7 @@ form label {
 }
 
 header {
-  border-bottom: 1px solid #ccc;
+  border-bottom: 2px solid rgb(252, 184, 26);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -162,7 +162,7 @@ main {
 }
 
 .card-content {
-  border-bottom: 2px solid rgb(95, 93, 93);
+  border-bottom: 2px solid #111010;
   margin-bottom: 1em;
 }
 
