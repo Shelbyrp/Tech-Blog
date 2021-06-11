@@ -3,11 +3,9 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Description
-This application is a tech blog, called Techie Talk, and it can be used to write and save posts for others to view. This application uses an Express.js back end and will save and retrieve note data from a JSON file.
+This application is a tech blog, called Techie Talk, and it can be used to write and save posts for others to view. It is a CMS-style blog site similar to a Wordpress site, where developers can publish their blog posts and comment on other developers’ posts as well. This application follows the MVC paradign in it's architectural structure, uses Handlebars.js as the templating language, Sequelize as the ORM, and the express-session npm package for authentication. Also used for this application is MySQL2, dotenv package, bcrypt package, express-session and connect-session-sequelize.
 
-The application’s front end was already been created. So a back end has been created to, connect the two, and then deploy the entire application to Heroku.
-
-Link to the Heroku application: [view app](https://evening-citadel-18697.herokuapp.com/). 
+Link to the Heroku application for "Techie Talk": [view app](https://sleepy-tundra-82832.herokuapp.com/). 
 
 ![Final result appears as:](./public/assets/img/notetaker1.png)
 ![Final result appears as:](./public/assets/img/notetaker2.png)
