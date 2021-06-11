@@ -97,14 +97,6 @@ main {
   color: #3486eb;
 }
 
-.delete-post-btn {
-  background-color: #d41414;
-}
-
-.delete-post-btn:hover {
-  background-color: #ff643d;
-}
-
 .post {
   margin-bottom: 2%;
   line-height: 150%;
@@ -169,4 +161,13 @@ main {
 .rows {
     display:flex;
     flex-direction: column;
+}
+
+#post-content{
+  font-size: 1.2rem;
+  width: 100%;
+}
+
+#post-title {
+  font-size: 1.5rem;
 }

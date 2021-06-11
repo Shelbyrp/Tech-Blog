@@ -9,7 +9,8 @@
     </div>
     <div>
       <label for="post-content">Content:</label>
-      <input class="textarea" name="post-content" type="text" value="{{post.post_content}}" />
+      {{!-- <input class="textarea" name="post-content" type="text" value="{{post.post_content}}" /> --}}
+      <textarea class="textarea" name="post-content" type="text" value="{{post.post_content}}"></textarea>
     </div>
     <div class="is-pulled-right">
       Created on {{format_date post.created_at}}
