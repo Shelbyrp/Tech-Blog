@@ -21,16 +21,18 @@ Link to the Heroku application for "Techie Talk": [view app](https://sleepy-tund
 
 ## Installation 
 
-Clone these files from the GitHub repository via your preferred means. Then make sure to install necessary dependencies by running the following command:
+Clone these files from the GitHub repository via your preferred means. Then make sure to install necessary dependencies by running the following commands:
+```
+npm init
+```
 ```
 npm install
-
 ```
 
 ## Usage
 Once the files have been pull down to your preferred repository, run this application by inputting 'npm start' into your bash terminal. The server will start. You can then view the application in the default browser.
 
-Click on the get started button and enter in your note. Once you've entered in text, a save icon will appear in the top right corner. Click on this once you've completed your note.
+The datasbase needs to be popluated by running "npm run seed."
 
 ## License
 This project is licensed by the [MIT](https://opensource.org/licenses/MIT) license
