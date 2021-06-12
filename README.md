@@ -7,8 +7,9 @@ This application is a tech blog, called Techie Talk, and it can be used to write
 
 Link to the Heroku application for "Techie Talk": [view app](https://sleepy-tundra-82832.herokuapp.com/). 
 
-![Final result appears as:](./public/assets/img/notetaker1.png)
-![Final result appears as:](./public/assets/img/notetaker2.png)
+![Final result appears as:](./public/image/TechieTalk.png)
+![Final result appears as:](./public/image/TechieTalk2.png)
+![Final result appears as:](./public/image/TechieTalk3.png)
 
 ## Table of Contents
 - [Installation](#installation)
