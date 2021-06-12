@@ -14,7 +14,7 @@ async function deleteCommentFormHandler(event) {
         }
       });
       if (response.ok) {
-        document.location.replace('/posts/');
+        document.location.replace('/dashboard');
       } else {
         alert(response.statusText);
       }
