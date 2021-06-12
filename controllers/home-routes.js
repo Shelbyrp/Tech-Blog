@@ -96,7 +96,10 @@ router.get("/post/:id", async (req, res) => {
       res.status(404).json({ message: "No post found with this id" });
       return;
     }
+
     const post = postData.get({ plain: true });
+    console.log(post,'test'); 
+
     res.render("single-post", {
       post,
       loggedIn: req.session.loggedIn,

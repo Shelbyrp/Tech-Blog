@@ -27,7 +27,25 @@ router.post('/', withAuth, (req, res) => {
   }
 });
 
-router.delete('/:id', withAuth, async (req, res) => {
+// router.delete('/:id', withAuth, async (req, res) => {
+//   try {
+//     const commentData = await Comment.destroy({
+//       where: {
+//         id: req.params.id
+//       }
+//     });
+//     if (!commentData) {
+//       res.status(404).json({ message: 'There are no comments with this id' });
+//       return;
+//     }
+//     res.status(200).json(commentData);
+//   } catch (error) {
+//     console.log(err);
+//     res.status(500).json(err);
+//   }
+// });
+
+router.delete('/:id', async (req, res) => {
   try {
     const commentData = await Comment.destroy({
       where: {

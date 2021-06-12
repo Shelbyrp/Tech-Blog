@@ -1,9 +1,8 @@
 async function deleteCommentFormHandler(event) {
     event.preventDefault();
-
-    const id = window.location.toString().split('/')[
-        window.location.toString().split('/').length - 1
-      ];
+    console.log(this.parentNode)
+    let id = this.parentNode.getAttribute('data-id')
+ 
     const comment_text = document.querySelector('textarea[name="comment-body"]').value.trim();
        const response = await fetch(`/api/comments/${id}`, {
         method: 'DELETE',
@@ -15,7 +14,7 @@ async function deleteCommentFormHandler(event) {
         }
       });
       if (response.ok) {
-        document.location.replace('/dashboard/');
+        document.location.replace('/posts/');
       } else {
         alert(response.statusText);
       }
