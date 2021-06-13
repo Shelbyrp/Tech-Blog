@@ -20,4 +20,4 @@ async function editCommentFormHandler(event) {
       }
   }
   
-  document.querySelector('.comment-body').addEventListener('submit', editCommentFormHandler);
+  document.querySelector('.edit-comment-btn').addEventListener('submit', editCommentFormHandler);
