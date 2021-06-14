@@ -67,7 +67,6 @@ router.get('/:id', async (req, res) => {
       res.status(404).json({ message: 'There is no post with this id' });
       return;
     }
-
   } catch (error) {
     console.log(err);
     res.status(500).json(err);

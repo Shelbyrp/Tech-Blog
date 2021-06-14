@@ -50,11 +50,13 @@ router.put('/:id', async (req, res) => {
   try {
     console.log(req.body.comment_text)
     const commentData = await Comment.update({
-      comment_text: req.body.comment_text,
-      where: {
-        id: req.params.id,
-      },
-    });
+      comment_text: req.body.comment_text
+    },
+      {
+        where: {
+          id: req.params.id,
+        },
+      });
     if (!commentData) {
       res.status(404).json({ message: 'No comment found with that id!' });
       return;
