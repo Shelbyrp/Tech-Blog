@@ -1,15 +1,23 @@
 <div class="comments">
   {{#each this}}
-  <section class="comment" data-id={{id}}>
-    <div class="meta">
-      {{user.username}} on {{format_date created_at}}
-    </div>
-    <div class="text comment-text">
-      {{comment_text}}
-    </div>
-        <button type="button" class="button is-success mt-1 p-1 edit-comment-btn">Edit Comment</button>
-        <button type="button" class="button is-warning mt-1 p-1 delete-comment-btn">Delete Comment</button>
-  </section>
+    <section class="comment" data-id={{id}}>
+      <div class="meta">
+        {{user.username}}
+        on
+        {{format_date created_at}}
+      </div>
+      <div class="text comment-text" name="comment-text" id="edit-comment-text">
+        {{comment_text}}
+      </div>
+      {{! <button
+        type="button"
+        class="button is-success mt-1 p-1 edit-comment-btn"
+      >Edit Comment</button> }}
+      <button class="button is-success mt-1 p-1 edit-comment-btn">Edit Comment</button>
+      <button
+        type="button"
+        class="button is-warning mt-1 p-1 delete-comment-btn"
+      >Delete Comment</button>
+    </section>
   {{/each}}
 </div>
-

@@ -5,7 +5,7 @@ const withAuth = require("../utils/auth");
 
 router.get("/", withAuth, async (req, res) => {
   try {
-    const postData= await Post.findAll({
+    const postData = await Post.findAll({
       where: {
         user_id: req.session.user_id,
       },
@@ -26,7 +26,7 @@ router.get("/", withAuth, async (req, res) => {
       ],
     })
     const posts = postData.map((post) => post.get({ plain: true }));
-      res.render("dashboard", { posts, loggedIn: true });
+    res.render("dashboard", { posts, loggedIn: true });
   } catch (error) {
     console.log(error);
     res.status(500).json(error);
@@ -91,9 +91,30 @@ router.get("/create/", withAuth, async (req, res) => {
           attributes: ["username"]
         },
       ],
-    }) 
+    })
     const posts = postData.map((post) => post.get({ plain: true }));
-      res.render("create-post", { posts, loggedIn: true });
+    res.render("create-post", { posts, loggedIn: true });
+  } catch (error) {
+    console.log(error);
+    res.status(500).json(error);
+  }
+});
+
+router.get("/edit-comment/:id", withAuth, async (req, res) => {
+  try {
+    const commentData = await Comment.findOne({
+      where: {
+        id: req.params.id,
+      },
+    })
+    if (!commentData) {
+      res.status(404).json({ message: "No comment found with this id" });
+      return;
+    }
+    const post = commentData.get({ plain: true });
+    res.render("edit-comment", {
+      comment_text
+    });
   } catch (error) {
     console.log(error);
     res.status(500).json(error);
