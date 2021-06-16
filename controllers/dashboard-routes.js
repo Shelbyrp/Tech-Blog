@@ -111,9 +111,13 @@ router.get("/edit-comment/:id", withAuth, async (req, res) => {
       res.status(404).json({ message: "No comment found with this id" });
       return;
     }
+    console.log("comment data", commentData)
     const comment_text = commentData.get({ plain: true });
+    console.log("comment_text", comment_text)
     res.render("edit-comment", {
-      comment_text
+      id: req.params.id,
+      comment_text: comment_text,
+      saved: req.query.saved
     });
   } catch (error) {
     console.log(error);

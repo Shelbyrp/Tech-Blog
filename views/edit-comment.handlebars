@@ -2,10 +2,15 @@
   <button type="submit" class="button is-success is-pulled-right"><a href="/dashboard" class="has-text-white">Return to Dashboard</a></button>
   <h2 class="title mt-5">Edit Comment</h2>
   <hr>
+  {{#if saved}}
+  <div> 
+      <h1 class="has-text-black">Comment Saved</h1>
+  </div>
+  {{/if}}
   <form class="edit-comment-form">
     <div>
       <label for="comment-content">Comment:</label>
-      <textarea class="textarea" name="comment-content" type="text" value="{{comment.comment_text}}">{{comment.comment_text}}</textarea>
+      <textarea class="textarea" name="comment-content" id="comment" type="text" data-id={{id}}>{{comment_text.comment_text}}</textarea>
     </div>
     <button type="submit" class="button is-success save-comment-btn">Save Comment</button>
   </form>
@@ -14,6 +19,4 @@
 {{> comments post.comments}}
 
 <!-- javascript-->
-<script src="/javascript/comment.js"></script>
-<script src="/javascript/deletecomment.js"></script>
-<script src="/javascript/editcomment.js"></script>
+<script src="/javascript/savecomment.js"></script>
